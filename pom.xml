@@ -59,7 +59,7 @@
 						<id>auth-common</id>
 						<configuration>
 							<sourcePaths>
-								<sourcePath>${basedir}/schema/common/v1</sourcePath>
+								<sourcePath>${basedir}/schema/v1</sourcePath>
 							</sourcePaths>
 							<targetPackage>com.justamonad.api.platform.auth</targetPackage>
 							<includeJsr303Annotations>true</includeJsr303Annotations>
