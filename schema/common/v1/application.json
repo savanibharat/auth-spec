@@ -1,0 +1,37 @@
+{
+	"type": "object",
+	"title": "Application",
+	"description": "Application created for tenant. Application can only be created by a company.",
+	"properties": {
+		"name": {
+			"type": "string",
+			"description": "Name of an application.",
+			"minLength": 5,
+			"maxLength": 300
+		},
+		"credentials": {
+			"description": "Client credentials for this application.",
+			"$ref": "credentials.json"
+		},
+		"status": {
+			"type": "string",
+			"enum": [
+				"ACTIVE",
+				"INACTIVE"
+			]
+		},
+		"create_time": {
+			"description": "The timestamp when this tenant was created.",
+			"type": "string",
+			"readOnly": true
+		},
+		"update_time": {
+			"description": "The timestamp when this tenant was updated.",
+			"type": "string",
+			"readOnly": true
+		}
+	},
+	"required": [
+		"name"
+	]
+}

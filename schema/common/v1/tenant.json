@@ -1,0 +1,50 @@
+{
+	"type": "object",
+	"title": "Tenant",
+	"description": "Tenant is a company name.",
+	"properties": {
+		"name": {
+			"type": "string",
+			"description": "Name of a company."
+		},
+		"id": {
+			"type": "string",
+			"description": "Id for a tenant."
+		},
+		"status": {
+			"type": "string",
+			"enum": [
+				"ACTIVE",
+				"INACTIVE"
+			]
+		},
+		"whitelisted_tenants": {
+			"description": "List of tenants this tenant is whitelisted for view access. Write access is not provided.",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"subsidiaries": {
+			"description": "List of subsidiaries for this tenant. This tenant can read data of all the subsidiaries. Write access is not provided.",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"create_time": {
+			"description": "The timestamp when this tenant was created.",
+			"type": "string",
+			"readOnly": true
+		},
+		"update_time": {
+			"description": "The timestamp when this tenant was updated.",
+			"type": "string",
+			"readOnly": true
+		}
+	},
+	"required": [
+		"name",
+		"status"
+	]
+}
